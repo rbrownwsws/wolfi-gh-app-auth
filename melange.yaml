@@ -1,0 +1,29 @@
+# $schema:https://raw.githubusercontent.com/chainguard-dev/melange/main/pkg/config/schema.json
+package:
+  name: gh-app-auth
+  version: "0.1.0"
+  epoch: 0
+  description: Get a GitHub App Installation Token for authentication
+  copyright:
+    - license: Apache-2.0
+  dependencies:
+    runtime: []
+
+pipeline:
+  - uses: git-checkout
+    with:
+      expected-commit: 87d2f326dd2010516f5fed25d16fd54c704dc0fa
+      repository: https://github.com/rbrownwsws/gh-app-auth
+      tag: v${{package.version}}
+
+  - uses: cargo/build
+    with:
+      output: gh-app-auth
+
+environment:
+  contents:
+    repositories:
+      - https://packages.wolfi.dev/os
+    keyring:
+      - https://packages.wolfi.dev/os/wolfi-signing.rsa.pub
+    packages: []

@@ -1,0 +1,15 @@
+# $schema: https://json.schemastore.org/github-workflow.json
+name: CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  build:
+    uses: rbrownwsws/melange-workflows/.github/workflows/build.yaml@9934244b3a67901c1d4d0bf674a7c0a5ce353a9f # master
+    with:
+      build-arch: "amd64,arm64"
