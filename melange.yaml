@@ -1,7 +1,7 @@
 # $schema:https://raw.githubusercontent.com/chainguard-dev/melange/main/pkg/config/schema.json
 package:
   name: gh-app-auth
-  version: "0.1.0"
+  version: "0.2.0"
   epoch: 0
   description: Get a GitHub App Installation Token for authentication
   copyright:
@@ -12,7 +12,7 @@ package:
 pipeline:
   - uses: git-checkout
     with:
-      expected-commit: 87d2f326dd2010516f5fed25d16fd54c704dc0fa
+      expected-commit: 33f12975253ebd1cf360734056b77016db6c99a2
       repository: https://github.com/rbrownwsws/gh-app-auth
       tag: v${{package.version}}
 
