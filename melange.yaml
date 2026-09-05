@@ -2,7 +2,7 @@
 package:
   name: gh-app-auth
   version: "0.2.0"
-  epoch: 6
+  epoch: 7
   description: Get a GitHub App Installation Token for authentication
   copyright:
     - license: Apache-2.0
